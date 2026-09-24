@@ -1,4 +1,4 @@
-const DEFAULT_NGROK_DOMAIN = 'https://flatbed-overcast-bolster.ngrok-free.dev';
+const DEFAULT_NGROK_DOMAIN = 'https://wrinkle-owl-displease.ngrok-free.dev';
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL || DEFAULT_NGROK_DOMAIN;
 
 // Use Vite proxy on localhost to completely bypass browser CORS preflight blocks

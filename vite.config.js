@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/app': {
-        target: 'https://flatbed-overcast-bolster.ngrok-free.dev',
+        target: 'https://wrinkle-owl-displease.ngrok-free.dev',
         changeOrigin: true,
         secure: false,
         headers: {
