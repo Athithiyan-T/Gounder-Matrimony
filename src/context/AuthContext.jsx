@@ -4,13 +4,16 @@ import { MOCK_PROFILES } from '../data/mockProfiles';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  // Demo logged in user state (default: Karthik GM-1001)
+  // User authentication state (defaults to null/false unless previously logged in)
   const [currentUser, setCurrentUser] = useState(() => {
     const saved = localStorage.getItem('gm_user');
-    return saved ? JSON.parse(saved) : MOCK_PROFILES[0];
+    return saved ? JSON.parse(saved) : null;
   });
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    const saved = localStorage.getItem('gm_user');
+    return !!saved;
+  });
 
   // Shortlisted Profile IDs state
   const [shortlist, setShortlist] = useState(() => {

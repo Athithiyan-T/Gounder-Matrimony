@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User, Heart, ShieldCheck, Edit3, Bell, CheckCircle2, Eye, Send, Sparkles, UserCheck, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -10,9 +10,20 @@ import { ProfileUpdateForm } from '../components/common/ProfileUpdateForm';
 
 export const Dashboard = () => {
   const navigate = useNavigate();
-  const { currentUser, shortlist, interestsSent, showToast, expressInterest, logout } = useAuth();
+  const { currentUser, isLoggedIn, shortlist, interestsSent, showToast, expressInterest, logout } = useAuth();
   const [activeTab, setActiveTab] = useState('edit-profile'); // 'edit-profile', 'recommended', 'shortlist', 'activity'
   const [selectedInterestProfile, setSelectedInterestProfile] = useState(null);
+
+  useEffect(() => {
+    if (!isLoggedIn || !currentUser) {
+      showToast('Please login to access your account & profile', 'info');
+      navigate('/login', { replace: true });
+    }
+  }, [isLoggedIn, currentUser, navigate]);
+
+  if (!isLoggedIn || !currentUser) {
+    return null;
+  }
 
   const handleLogout = () => {
     logout();

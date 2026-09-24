@@ -81,9 +81,14 @@ export const OTPVerification = () => {
     try {
       await verifyOtpApi(mobileNumber, enteredCode);
       
-      showToast('OTP Verified Successfully! Welcome to your Gounder Matrimony Account', 'success');
+      showToast('OTP Verified Successfully! Welcome to Gounder Matrimony', 'success');
       loginDemoUser('GM-1001');
-      navigate('/dashboard');
+
+      if (location.state?.fromRegister) {
+        navigate('/register', { state: { mobileNumber, isVerified: true } });
+      } else {
+        navigate('/dashboard');
+      }
     } catch (err) {
       showToast(err.message || 'Invalid OTP code. Please check and try again.', 'error');
     } finally {
