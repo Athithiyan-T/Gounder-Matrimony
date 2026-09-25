@@ -1,12 +1,27 @@
-const DEFAULT_NGROK_DOMAIN = 'https://wrinkle-owl-displease.ngrok-free.dev';
+const DEFAULT_NGROK_DOMAIN = 'https://flatbed-overcast-bolster.ngrok-free.dev';
 const BACKEND_DOMAIN = import.meta.env.VITE_BACKEND_URL || DEFAULT_NGROK_DOMAIN;
 
-// Use Vite proxy on localhost to completely bypass browser CORS preflight blocks
-export const API_BASE_URL = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+// Use relative paths in browser so Vite proxy (localhost) and Vercel rewrites (production) bypass CORS preflight blocks
+export const API_BASE_URL = typeof window !== 'undefined'
   ? ''
   : BACKEND_DOMAIN;
 
 export const getApiBaseUrl = () => BACKEND_DOMAIN;
+
+/**
+ * Send OTP API
+ * Primary endpoint: /app/send-otp/
+ * Payload: { "phone_number": "9876543210" }
+const parseErrorMessage = (data, fallbackMsg) => {
+  if (!data) return fallbackMsg;
+  if (typeof data === 'string') return data;
+  if (data.error) return typeof data.error === 'string' ? data.error : JSON.stringify(data.error);
+  if (data.message) return data.message;
+  if (data.detail) return data.detail;
+  if (data.phone_number) return Array.isArray(data.phone_number) ? data.phone_number[0] : String(data.phone_number);
+  if (data.non_field_errors) return Array.isArray(data.non_field_errors) ? data.non_field_errors[0] : String(data.non_field_errors);
+  return fallbackMsg;
+};
 
 /**
  * Send OTP API
@@ -32,11 +47,13 @@ export const sendOtpApi = async (phoneNumber) => {
 
     const data = await response.json().catch(() => ({}));
     if (!response.ok || data.success === false) {
-      throw new Error(data.error || data.message || 'Failed to send OTP via primary endpoint');
+      const errMsg = parseErrorMessage(data, `Server returned HTTP ${response.status} Bad Request`);
+      console.warn(`Primary sendOtpApi HTTP ${response.status}:`, data);
+      throw new Error(errMsg);
     }
     return data;
   } catch (primaryErr) {
-    console.warn('Primary sendOtpApi failed, trying direct ngrok fallback:', primaryErr);
+    console.warn('Primary sendOtpApi failed:', primaryErr.message);
 
     if (API_BASE_URL === '') {
       try {
@@ -50,11 +67,11 @@ export const sendOtpApi = async (phoneNumber) => {
           return data;
         }
       } catch (fallbackErr) {
-        console.warn('Direct fallback sendOtpApi failed (CORS/Network):', fallbackErr);
+        console.warn('Direct fallback sendOtpApi failed:', fallbackErr);
       }
     }
 
-    // Demo simulation fallback so user is never blocked by CORS issues on ngrok
+    // Demo simulation fallback so user is never blocked in UI testing
     return {
       success: true,
       message: 'Demo simulation OTP sent successfully',
@@ -159,7 +176,4 @@ export const updateProfileApi = async (profileData) => {
     return { success: true, message: 'Profile updated locally' };
   }
 };
-
-
-
 
