@@ -9,9 +9,8 @@ export const API_BASE_URL = typeof window !== 'undefined'
 export const getApiBaseUrl = () => BACKEND_DOMAIN;
 
 /**
- * Send OTP API
- * Primary endpoint: /app/send-otp/
- * Payload: { "phone_number": "9876543210" }
+ * Helper to parse error message from API response
+ */
 const parseErrorMessage = (data, fallbackMsg) => {
   if (!data) return fallbackMsg;
   if (typeof data === 'string') return data;
@@ -106,7 +105,8 @@ export const verifyOtpApi = async (phoneNumber, otpCode) => {
 
     const data = await response.json().catch(() => ({}));
     if (!response.ok || data.success === false) {
-      throw new Error(data.error || data.message || 'OTP Verification failed');
+      const errMsg = parseErrorMessage(data, `OTP verification failed with HTTP ${response.status}`);
+      throw new Error(errMsg);
     }
     return data;
   } catch (primaryErr) {

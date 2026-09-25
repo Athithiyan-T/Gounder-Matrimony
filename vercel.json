@@ -3,6 +3,10 @@
     {
       "source": "/app/:path*",
       "destination": "https://flatbed-overcast-bolster.ngrok-free.dev/app/:path*"
+    },
+    {
+      "source": "/((?!app/).*)",
+      "destination": "/index.html"
     }
   ]
 }
