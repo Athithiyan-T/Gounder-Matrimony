@@ -55,7 +55,6 @@ export const sendOtpApi = async (phoneNumber) => {
     return data;
   } catch (primaryErr) {
     console.warn('Primary sendOtpApi failed:', primaryErr.message);
-
     if (API_BASE_URL === '') {
       try {
         const response = await fetch(fallbackEndpoint, {
@@ -86,6 +85,7 @@ export const sendOtpApi = async (phoneNumber) => {
  * Primary endpoint: /app/verify-otp/
  * Payload: { "phone_number": "9876543210", "otp": "123456" }
  */
+
 export const verifyOtpApi = async (phoneNumber, otpCode) => {
   const cleanPhone = String(phoneNumber).replace(/[^0-9]/g, '').slice(-10);
   const primaryEndpoint = `${API_BASE_URL}/app/verify-otp/`;
@@ -178,4 +178,7 @@ export const updateProfileApi = async (profileData) => {
     return { success: true, message: 'Profile updated locally' };
   }
 };
+
+
+
 

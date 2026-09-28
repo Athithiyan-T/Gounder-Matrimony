@@ -122,177 +122,184 @@ export const Home = () => {
 
   return (
     <div>
-      {/* 1. HERO SECTION WITH FULL-BACKGROUND COVER IMAGE */}
-      <section
-        id="hero"
-        style={{
-          backgroundImage: 'linear-gradient(to right, rgba(20, 10, 14, 0.72) 0%, rgba(20, 10, 14, 0.35) 45%, rgba(20, 10, 14, 0.15) 70%, rgba(20, 10, 14, 0.65) 100%), url(/hero-couple-main.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 20%',
-          paddingTop: '3.5rem',
-          paddingBottom: '4rem',
-          position: 'relative',
-          overflow: 'hidden',
-          color: '#FFFFFF'
-        }}
-        className="hero-full-bg-section"
-      >
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 320px', gap: '2rem', alignItems: 'center' }} className="hero-full-grid">
+      {/* 1. HERO SECTION MATCHING EXACT REFERENCE IMAGE WITH ENHANCED CLEAR BACKGROUND & GLASSMORPHISM */}
+      <section id="hero" className="hero-exact-section">
+        
+        {/* Decorative Gold Mandala Kolam Overlay in Background */}
+        <div className="hero-mandala-bg" aria-hidden="true">
+          <svg viewBox="0 0 500 500" fill="none" style={{ width: '450px', height: '450px', opacity: 0.12 }}>
+            <circle cx="250" cy="250" r="230" stroke="#D4AF37" strokeWidth="2" strokeDasharray="6 6" />
+            <circle cx="250" cy="250" r="180" stroke="#7A1C29" strokeWidth="1.5" />
+            <circle cx="250" cy="250" r="130" stroke="#D4AF37" strokeWidth="2" />
+            <path d="M250 20 L250 480 M20 250 L480 250 M87 87 L413 413 M87 413 L413 87" stroke="#7A1C29" strokeWidth="1" opacity="0.6" />
+            <circle cx="250" cy="250" r="50" fill="#7A1C29" opacity="0.1" />
+          </svg>
+        </div>
+
+        {/* Left Side Decorative South Indian Floral Artwork SVG */}
+        <div className="hero-floral-left" aria-hidden="true">
+          <svg viewBox="0 0 240 400" fill="none" style={{ width: '220px', height: '360px' }}>
+            <g opacity="0.85">
+              <path d="M-20 -10 C 60 40, 40 160, -10 260 C -40 320, 30 380, 80 420" stroke="#7A1C29" strokeWidth="2" strokeLinecap="round" opacity="0.3" />
+              <circle cx="35" cy="45" r="16" fill="#E88B97" opacity="0.85" />
+              <circle cx="35" cy="45" r="8" fill="#C94B5E" />
+              <path d="M 35 15 Q 45 35 35 45 Q 25 35 35 15 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 65 45 Q 45 55 35 45 Q 45 35 65 45 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 35 75 Q 25 55 35 45 Q 45 55 35 75 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 5 45 Q 25 35 35 45 Q 25 55 5 45 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 40 100 Q 80 90 90 120 Q 60 130 40 100 Z" fill="#6B8E60" opacity="0.75" />
+              <path d="M 15 140 Q 55 150 50 180 Q 20 170 15 140 Z" fill="#8A9A65" opacity="0.8" />
+              <circle cx="70" cy="190" r="12" fill="#E88B97" opacity="0.85" />
+              <circle cx="70" cy="190" r="6" fill="#7A1C29" />
+              <path d="M 10 230 Q 50 210 65 240 Q 30 260 10 230 Z" fill="#D4AF37" opacity="0.7" />
+            </g>
+          </svg>
+        </div>
+
+        {/* Right Side Decorative South Indian Floral Artwork SVG */}
+        <div className="hero-floral-right" aria-hidden="true">
+          <svg viewBox="0 0 240 400" fill="none" style={{ width: '220px', height: '360px' }}>
+            <g opacity="0.85">
+              <path d="M260 -10 C 180 40, 200 160, 250 260 C 280 320, 210 380, 160 420" stroke="#7A1C29" strokeWidth="2" strokeLinecap="round" opacity="0.3" />
+              <circle cx="205" cy="45" r="16" fill="#E88B97" opacity="0.85" />
+              <circle cx="205" cy="45" r="8" fill="#C94B5E" />
+              <path d="M 205 15 Q 215 35 205 45 Q 195 35 205 15 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 235 45 Q 215 55 205 45 Q 215 35 235 45 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 205 75 Q 195 55 205 45 Q 215 55 205 75 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 175 45 Q 195 35 205 45 Q 195 55 175 45 Z" fill="#D65A6C" opacity="0.9" />
+              <path d="M 200 100 Q 160 90 150 120 Q 180 130 200 100 Z" fill="#6B8E60" opacity="0.75" />
+              <path d="M 225 140 Q 185 150 190 180 Q 220 170 225 140 Z" fill="#8A9A65" opacity="0.8" />
+            </g>
+          </svg>
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 3 }}>
+          <div className="hero-exact-grid">
             
-            {/* Left Hero Text Column */}
-            <div>
-              <div style={{
-                fontSize: '0.775rem',
-                fontWeight: 800,
-                color: '#FFD700',
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                marginBottom: '0.75rem',
-                textShadow: '0 2px 4px rgba(0,0,0,0.6)'
-              }}>
-                TRADITIONAL VALUES • FOR A BRIGHTER TOMORROW
+            {/* Left Content Column inside Glassmorphic Container for high backdrop image visibility */}
+            <div className="hero-left-glass-card">
+              
+              {/* Top Floating Badge */}
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.85rem' }}>
+                <div className="hero-community-pill">
+                  GOUNDER MATRIMONY
+                </div>
+                <div className="hero-trust-badge">
+                  ✨ #1 Matrimony for Gounder Families
+                </div>
               </div>
 
-              <h1 style={{
-                fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-                color: '#FFFFFF',
-                lineHeight: 1.15,
-                marginBottom: '1rem',
-                fontFamily: 'var(--font-heading)',
-                fontWeight: 800,
-                textShadow: '0 3px 12px rgba(0,0,0,0.8)'
-              }}>
-                Find Your <br />
-                <span style={{ color: '#FFD1DC' }}>Perfect Life Partner</span>
+              {/* Headline matching image exact layout */}
+              <h1 className="hero-exact-title">
+                Meaningful <br />
+                Connections <br />
+                <span className="hero-script-heading">Beyond Generations</span>
               </h1>
 
-              <p style={{
-                fontSize: '0.975rem',
-                color: '#FFFFFF',
-                marginBottom: '2rem',
-                maxWidth: '460px',
-                lineHeight: 1.6,
-                textShadow: '0 2px 8px rgba(0,0,0,0.8)'
-              }}>
-                A trusted matrimonial platform for Gounder community, bringing families together with trust and tradition.
+              {/* Sub-description */}
+              <p className="hero-exact-subtitle">
+                Join a trusted community of Gounder families and find a life partner who shares your values, culture and dreams.
               </p>
 
-              {/* 3 Metrics Stats Bar below text */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '1rem',
-                paddingTop: '1.25rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.3)',
-                maxWidth: '460px'
-              }}>
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontWeight: 800, fontSize: '1.2rem', color: '#FFFFFF', textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>
+              {/* 3 Metric Stats Row at bottom left */}
+              <div className="hero-stats-row">
+                
+                <div className="hero-stat-item">
+                  <div className="stat-icon-circle">
                     <Users size={18} color="#FFD700" />
-                    <span>50,000+</span>
                   </div>
-                  <span style={{ fontSize: '0.725rem', color: '#FFFFFF', fontWeight: 600, textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>Happy Members</span>
+                  <div>
+                    <div className="stat-num">50,000+</div>
+                    <div className="stat-label">Happy Members</div>
+                  </div>
                 </div>
 
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontWeight: 800, fontSize: '1.2rem', color: '#FFFFFF', textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>
-                    <Heart size={18} color="#FFD1DC" fill="#FFD1DC" />
-                    <span>5,000+</span>
+                <div className="hero-stat-item">
+                  <div className="stat-icon-circle">
+                    <Heart size={18} color="#FFD700" fill="#FFD700" />
                   </div>
-                  <span style={{ fontSize: '0.725rem', color: '#FFFFFF', fontWeight: 600, textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>Successful Matches</span>
+                  <div>
+                    <div className="stat-num">5,000+</div>
+                    <div className="stat-label">Successful Matches</div>
+                  </div>
                 </div>
 
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontWeight: 800, fontSize: '1.2rem', color: '#FFFFFF', textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>
+                <div className="hero-stat-item">
+                  <div className="stat-icon-circle">
                     <ShieldCheck size={18} color="#FFD700" />
-                    <span>100%</span>
                   </div>
-                  <span style={{ fontSize: '0.725rem', color: '#FFFFFF', fontWeight: 600, textShadow: '0 2px 4px rgba(0,0,0,0.6)' }}>Verified Profiles</span>
+                  <div>
+                    <div className="stat-num">100%</div>
+                    <div className="stat-label">Verified Profiles</div>
+                  </div>
                 </div>
+
               </div>
+
             </div>
 
-            {/* Right Compact Floating Quick Search Card */}
-            <div className="card hero-quick-search-card">
+            {/* Right Floating Glassmorphic Search Box ("Find Your Match") */}
+            <div className="hero-search-card">
               
-              {/* Compact Search Box Tabs */}
-              <div style={{ display: 'flex', borderBottom: '1px solid #EFE4DC' }}>
+              {/* Gold Trim Line at top of Search Card */}
+              <div className="search-card-gold-trim" />
+
+              {/* Top Search Tabs: Find Your Match (Active Maroon) | Quick Search (Inactive Cream) */}
+              <div className="hero-search-tabs">
                 <button
                   type="button"
+                  className={`search-tab-btn ${searchTab === 'match' ? 'active' : ''}`}
                   onClick={() => setSearchTab('match')}
-                  style={{
-                    flex: 1,
-                    padding: '0.75rem 0.85rem',
-                    fontWeight: 800,
-                    fontSize: '0.85rem',
-                    border: 'none',
-                    background: searchTab === 'match' ? '#7A1C29' : '#F7F1E9',
-                    color: searchTab === 'match' ? '#FFFFFF' : '#6B5E5F',
-                    borderTopLeftRadius: '15px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
                 >
                   Find Your Match
                 </button>
                 <button
                   type="button"
+                  className={`search-tab-btn ${searchTab === 'quick' ? 'active' : ''}`}
                   onClick={() => setSearchTab('quick')}
-                  style={{
-                    flex: 1,
-                    padding: '0.75rem 0.85rem',
-                    fontWeight: 800,
-                    fontSize: '0.85rem',
-                    border: 'none',
-                    background: searchTab === 'quick' ? '#7A1C29' : '#F7F1E9',
-                    color: searchTab === 'quick' ? '#FFFFFF' : '#6B5E5F',
-                    borderTopRightRadius: '15px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
                 >
                   Quick Search
                 </button>
               </div>
 
-              {/* Form Fields Inside Card */}
-              <form onSubmit={handleSearchSubmit} style={{ padding: '1.15rem 1.25rem' }}>
+              {/* Form Content */}
+              <form onSubmit={handleSearchSubmit} className="hero-search-form">
                 
-                {/* Touch-Friendly Gender Toggle */}
-                <div style={{ marginBottom: '0.85rem' }}>
-                  <label className="form-label" style={{ fontSize: '0.775rem', fontWeight: 800, color: '#33292A', marginBottom: '0.3rem', display: 'block' }}>
+                {/* I'm Looking For Toggle Pill Buttons */}
+                <div className="form-field-group">
+                  <label className="hero-form-label">
                     I'm Looking For
                   </label>
-                  <div className="gender-toggle-group">
+                  <div className="gender-toggle-wrapper">
                     <button
                       type="button"
-                      className={`gender-toggle-btn ${lookingFor === 'Bride' ? 'active' : ''}`}
+                      className={`gender-pill-btn ${lookingFor === 'Bride' ? 'active' : ''}`}
                       onClick={() => setLookingFor('Bride')}
                     >
-                      👰 Bride
+                      <span className="gender-icon">👰</span>
+                      Bride
                     </button>
                     <button
                       type="button"
-                      className={`gender-toggle-btn ${lookingFor === 'Groom' ? 'active' : ''}`}
+                      className={`gender-pill-btn ${lookingFor === 'Groom' ? 'active' : ''}`}
                       onClick={() => setLookingFor('Groom')}
                     >
-                      🤵 Groom
+                      <span className="gender-icon">🤵</span>
+                      Groom
                     </button>
                   </div>
                 </div>
 
-                {/* Age Select Dropdowns Row */}
-                <div style={{ marginBottom: '0.75rem' }}>
-                  <label className="form-label" style={{ fontSize: '0.775rem', fontWeight: 800, color: '#33292A', marginBottom: '0.25rem', display: 'block' }}>
-                    Age Expectations
+                {/* Age Range Row */}
+                <div className="form-field-group">
+                  <label className="hero-form-label">
+                    Age
                   </label>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '0.4rem', alignItems: 'center' }}>
+                  <div className="age-select-row">
                     <select
-                      className="form-control"
+                      className="hero-select-control"
                       value={minAge}
                       onChange={(e) => setMinAge(e.target.value)}
-                      style={{ padding: '0.45rem 0.5rem', fontSize: '0.85rem', borderRadius: '8px', height: '42px', fontWeight: 600 }}
                     >
                       <option value="18">18 Yrs</option>
                       <option value="21">21 Yrs</option>
@@ -300,12 +307,11 @@ export const Home = () => {
                       <option value="25">25 Yrs</option>
                       <option value="28">28 Yrs</option>
                     </select>
-                    <span style={{ fontSize: '0.8rem', color: '#7A6B6D', fontWeight: 700 }}>to</span>
+                    <span className="age-to-text">to</span>
                     <select
-                      className="form-control"
+                      className="hero-select-control"
                       value={maxAge}
                       onChange={(e) => setMaxAge(e.target.value)}
-                      style={{ padding: '0.45rem 0.5rem', fontSize: '0.85rem', borderRadius: '8px', height: '42px', fontWeight: 600 }}
                     >
                       <option value="30">30 Yrs</option>
                       <option value="35">35 Yrs</option>
@@ -317,15 +323,14 @@ export const Home = () => {
                 </div>
 
                 {/* Sub-Community Dropdown */}
-                <div style={{ marginBottom: '0.75rem' }}>
-                  <label className="form-label" style={{ fontSize: '0.775rem', fontWeight: 800, color: '#33292A', marginBottom: '0.25rem', display: 'block' }}>
-                    Gounder Sub-Community
+                <div className="form-field-group">
+                  <label className="hero-form-label">
+                    Sub-Community
                   </label>
                   <select
-                    className="form-control"
+                    className="hero-select-control"
                     value={community}
                     onChange={(e) => setCommunity(e.target.value)}
-                    style={{ padding: '0.45rem 0.5rem', fontSize: '0.85rem', borderRadius: '8px', height: '42px', fontWeight: 600 }}
                   >
                     <option value="Gounder">All Gounder Sub-Communities</option>
                     {GOUNDER_COMMUNITIES.map(c => (
@@ -335,15 +340,14 @@ export const Home = () => {
                 </div>
 
                 {/* Location Dropdown */}
-                <div style={{ marginBottom: '0.75rem' }}>
-                  <label className="form-label" style={{ fontSize: '0.775rem', fontWeight: 800, color: '#33292A', marginBottom: '0.25rem', display: 'block' }}>
-                    Preferred Location / District
+                <div className="form-field-group">
+                  <label className="hero-form-label">
+                    Location
                   </label>
                   <select
-                    className="form-control"
+                    className="hero-select-control"
                     value={district}
                     onChange={(e) => setDistrict(e.target.value)}
-                    style={{ padding: '0.45rem 0.5rem', fontSize: '0.85rem', borderRadius: '8px', height: '42px', fontWeight: 600 }}
                   >
                     <option value="Tamil Nadu">All Tamil Nadu</option>
                     {DISTRICTS.map(d => (
@@ -352,48 +356,13 @@ export const Home = () => {
                   </select>
                 </div>
 
-                {/* Education Dropdown */}
-                <div style={{ marginBottom: '1rem' }}>
-                  <label className="form-label" style={{ fontSize: '0.775rem', fontWeight: 800, color: '#33292A', marginBottom: '0.25rem', display: 'block' }}>
-                    Education Qualification
-                  </label>
-                  <select
-                    className="form-control"
-                    value={education}
-                    onChange={(e) => setEducation(e.target.value)}
-                    style={{ padding: '0.45rem 0.5rem', fontSize: '0.85rem', borderRadius: '8px', height: '42px', fontWeight: 600 }}
-                  >
-                    <option value="Any">Any Qualification</option>
-                    <option value="B.E / B.Tech">B.E / B.Tech</option>
-                    <option value="M.E / M.Tech">M.E / M.Tech</option>
-                    <option value="MBA / PGDM">MBA / PGDM</option>
-                    <option value="MBBS / MD">MBBS / MD</option>
-                    <option value="CA / CS">CA / CS</option>
-                  </select>
-                </div>
-
-                {/* Submit Search Button */}
+                {/* Submit Find Matches Button */}
                 <button
                   type="submit"
-                  className="btn"
-                  style={{
-                    width: '100%',
-                    backgroundColor: '#7A1C29',
-                    color: '#FFFFFF',
-                    fontWeight: 800,
-                    padding: '0.75rem',
-                    borderRadius: '8px',
-                    fontSize: '0.925rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    boxShadow: '0 4px 16px rgba(122, 28, 41, 0.25)',
-                    cursor: 'pointer'
-                  }}
+                  className="hero-submit-btn"
                 >
-                  <Search size={18} color="#FFD700" />
-                  Search Matching Profiles
+                  <span>Find Matches</span>
+                  <ChevronRight size={18} />
                 </button>
 
               </form>
