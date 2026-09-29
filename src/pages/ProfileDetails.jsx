@@ -63,11 +63,11 @@ export const ProfileDetails = () => {
             
             {/* Gallery Column */}
             <div>
-              <div style={{ position: 'relative', width: '100%', height: '360px', borderRadius: 'var(--radius-md)', overflow: 'hidden', marginBottom: '0.75rem' }}>
+              <div className="profile-detail-main-img-wrapper" style={{ position: 'relative', width: '100%', height: '380px', borderRadius: 'var(--radius-md)', overflow: 'hidden', marginBottom: '0.75rem' }}>
                 <img
                   src={profile.photos[activePhotoIdx]}
                   alt={profile.name}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }}
                 />
                 <span style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(0,0,0,0.65)', color: '#FFF', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.85rem' }}>
                   {profile.id}
@@ -94,7 +94,7 @@ export const ProfileDetails = () => {
                       border: activePhotoIdx === idx ? '3px solid var(--color-primary)' : '1px solid #DDD'
                     }}
                   >
-                    <img src={photoUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={photoUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }} />
                   </div>
                 ))}
               </div>

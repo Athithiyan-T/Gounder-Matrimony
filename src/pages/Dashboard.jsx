@@ -97,7 +97,7 @@ export const Dashboard = () => {
             {/* User Profile Card */}
             <div className="card" style={{ padding: '1.5rem', textAlign: 'center', background: '#FFF', borderRadius: '16px', border: '1px solid #EFE4DC' }}>
               <div style={{ position: 'relative', width: '110px', height: '110px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1rem auto', border: '3px solid var(--color-gold)', boxShadow: '0 4px 14px rgba(0,0,0,0.08)' }}>
-                <img src={currentUser?.photos?.[0] || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'} alt={currentUser?.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={currentUser?.photos?.[0] || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&w=600&h=750&q=80'} alt={currentUser?.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }} />
               </div>
               <h3 style={{ fontSize: '1.25rem', color: '#7A1C29', marginBottom: '0.25rem', fontWeight: 800 }}>
                 {currentUser?.name}

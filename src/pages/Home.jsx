@@ -446,8 +446,8 @@ export const Home = () => {
                   className="card"
                   style={{ background: '#FFFFFF', padding: '0.75rem', borderRadius: '10px', border: '1px solid #EFE4DC' }}
                 >
-                  <div style={{ position: 'relative', width: '100%', height: '170px', borderRadius: '8px', overflow: 'hidden', marginBottom: '0.75rem' }}>
-                    <img src={p.photos[0]} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'relative', width: '100%', height: '210px', borderRadius: '8px', overflow: 'hidden', marginBottom: '0.75rem' }}>
+                    <img src={p.photos[0]} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }} className="profile-card-img" />
                     
                     {/* Online badge top left */}
                     <div style={{ position: 'absolute', top: '8px', left: '8px', background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(4px)', padding: '0.15rem 0.5rem', borderRadius: '12px', fontSize: '0.675rem', fontWeight: 700, color: '#137333', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>

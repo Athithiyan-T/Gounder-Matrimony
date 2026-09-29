@@ -30,8 +30,8 @@ export const MOCK_PROFILES = [
     siblings: "1 Younger Sister (Married)",
     about: "I am a progressive yet traditional Kongu Vellalar engineer working in Coimbatore. I love coding, organic farming on weekends, and family gatherings. Looking for an educated, understanding partner with strong cultural values.",
     photos: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&crop=faces&w=600&h=750&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&crop=faces&w=600&h=750&q=80"
     ],
     verified: true,
     horoscopeAvailable: true,
@@ -76,8 +76,8 @@ export const MOCK_PROFILES = [
     siblings: "1 Elder Brother (B.E., USA)",
     about: "Compassionate doctor with a deep love for child healthcare and classical Carnatic music. Raised in a loving Kongu Vellalar family in Tiruppur. I seek a supportive partner who values mutual respect, health, and family happiness.",
     photos: [
-      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&crop=faces&w=600&h=750&q=80",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&crop=faces&w=600&h=750&q=80"
     ],
     verified: true,
     horoscopeAvailable: true,
@@ -122,8 +122,8 @@ export const MOCK_PROFILES = [
     siblings: "2 Brothers (Engineers)",
     about: "Born and raised in Dharmapuri, currently heading R&D team in Hosur. Down-to-earth person passionate about technology, green energy, and rural development. Seeking a cultured partner from Vannia Gounder / compatible sub-group.",
     photos: [
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&crop=faces&w=600&h=750&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces&w=600&h=750&q=80"
     ],
     verified: true,
     horoscopeAvailable: true,
@@ -168,8 +168,8 @@ export const MOCK_PROFILES = [
     siblings: "None (Only Child)",
     about: "Ambitious and cheery CA working in Chennai, with native roots in Karur. I enjoy reading, South Indian temple architecture, and traditional cooking. Looking for a partner who believes in mutual support and shared life goals.",
     photos: [
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&crop=faces&w=600&h=750&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&crop=faces&w=600&h=750&q=80"
     ],
     verified: true,
     horoscopeAvailable: true,
@@ -214,8 +214,8 @@ export const MOCK_PROFILES = [
     siblings: "1 Elder Sister (Married)",
     about: "Self-made agricultural entrepreneur leading an organic farm export business in Erode. Grounded, health-conscious, and deeply attached to Kurumba Gounder roots. Seeking a caring life partner.",
     photos: [
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&crop=faces&w=600&h=750&q=80",
+      "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?auto=format&fit=crop&crop=faces&w=600&h=750&q=80"
     ],
     verified: true,
     horoscopeAvailable: true,
@@ -260,8 +260,8 @@ export const MOCK_PROFILES = [
     siblings: "1 Younger Brother (Studying B.E)",
     about: "Enthusiastic biotech scientist working in Bengaluru. Native of Namakkal with Punnan Vettuva Gounder background. Passionate about badminton, traditional arts, and family traditions.",
     photos: [
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=600&h=750&q=80",
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&crop=faces&w=600&h=750&q=80"
     ],
     verified: true,
     horoscopeAvailable: true,

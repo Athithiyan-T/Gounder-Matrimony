@@ -2272,5 +2272,27 @@ button, input, select, textarea {
   }
 }
 
+/* ==========================================================================
+   PROFILE IMAGES MOBILE RESPONSIVE CENTERING & FOCUS FIX
+   ========================================================================== */
+.profile-card-img,
+.profile-list-photo-container img,
+.profile-detail-main-img-wrapper img {
+  object-fit: cover !important;
+  object-position: center 25% !important;
+}
+
+@media (max-width: 640px) {
+  .profile-list-photo-container {
+    width: 100% !important;
+    height: 260px !important;
+  }
+  
+  .profile-detail-main-img-wrapper {
+    height: 320px !important;
+  }
+}
+
+
 
 

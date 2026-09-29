@@ -13,11 +13,12 @@ export const ProfileCard = ({ profile, viewMode = "grid", onExpressInterest }) =
     return (
       <div className="card" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '1.5rem', padding: '1.25rem', marginBottom: '1.25rem' }}>
         {/* Photo Container */}
-        <div style={{ position: 'relative', width: '180px', height: '220px', borderRadius: 'var(--radius-md)', overflow: 'hidden', flexShrink: 0 }}>
+        <div className="profile-list-photo-container" style={{ position: 'relative', width: '180px', height: '230px', borderRadius: 'var(--radius-md)', overflow: 'hidden', flexShrink: 0 }}>
           <img
             src={profile.photos[0]}
             alt={profile.name}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }}
+            className="profile-card-img"
           />
           <span style={{ position: 'absolute', top: '10px', left: '10px', background: 'rgba(0,0,0,0.6)', color: '#FFF', fontSize: '0.75rem', padding: '0.2rem 0.5rem', borderRadius: 'var(--radius-sm)' }}>
             {profile.id}
@@ -90,11 +91,11 @@ export const ProfileCard = ({ profile, viewMode = "grid", onExpressInterest }) =
   return (
     <div className="card" style={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '12px', border: '1px solid #EFE4DC' }}>
       {/* Photo header */}
-      <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden', borderTopLeftRadius: '11px', borderTopRightRadius: '11px' }}>
+      <div style={{ position: 'relative', width: '100%', height: '260px', overflow: 'hidden', borderTopLeftRadius: '11px', borderTopRightRadius: '11px' }}>
         <img
           src={profile.photos[0]}
           alt={profile.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', transition: 'transform 0.4s ease' }}
           className="profile-card-img"
         />
 
