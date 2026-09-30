@@ -96,35 +96,34 @@ export const Profiles = () => {
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--color-bg-alt)', padding: '3rem 0', minHeight: '90vh' }}>
+    <div className="profiles-page-wrapper">
       <div className="container">
         
-        {/* Header Title */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', gap: '1rem' }}>
+        {/* Header Title & Controls Bar */}
+        <div className="profiles-header-flex">
           <div>
-            <h1 style={{ fontSize: '2.2rem', color: 'var(--color-primary-dark)', margin: 0, fontFamily: 'var(--font-heading)' }}>
+            <h1 className="profiles-page-title">
               Browse Gounder Matrimonial Profiles
             </h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.25rem' }}>
+            <p className="profiles-page-subtitle">
               Filter verified profiles by Gounder sub-community, BC/MBC classification, age, education, and district.
             </p>
           </div>
 
-          {/* View Mode Toggle Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          {/* View Mode Toggle & Mobile Filter Trigger */}
+          <div className="profiles-header-controls">
             <button
               onClick={() => setMobileFilterOpen(true)}
-              className="btn btn-outline btn-sm mobile-filter-btn"
-              style={{ display: 'none' }}
+              className="btn mobile-filter-btn"
+              type="button"
             >
-              <SlidersHorizontal size={16} /> Filters
+              <SlidersHorizontal size={16} /> Filters {filteredProfiles.length > 0 && `(${filteredProfiles.length})`}
             </button>
 
-            <div style={{ background: '#FFF', padding: '0.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid #E2D9CF', display: 'flex', gap: '0.25rem' }}>
+            <div className="view-mode-toggle-group">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`btn btn-sm ${viewMode === 'grid' ? 'btn-primary' : 'btn-secondary'}`}
-                style={{ padding: '0.4rem 0.6rem' }}
                 title="Grid View"
               >
                 <LayoutGrid size={16} />
@@ -132,7 +131,6 @@ export const Profiles = () => {
               <button
                 onClick={() => setViewMode('list')}
                 className={`btn btn-sm ${viewMode === 'list' ? 'btn-primary' : 'btn-secondary'}`}
-                style={{ padding: '0.4rem 0.6rem' }}
                 title="List View"
               >
                 <List size={16} />
@@ -142,7 +140,7 @@ export const Profiles = () => {
         </div>
 
         {/* Main Content Grid: Filter Sidebar + Profile Cards List */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(260px, 300px) 1fr', gap: '2rem' }}>
+        <div className="profiles-layout-grid">
           
           {/* Desktop Filter Panel Sidebar */}
           <div className="desktop-filter-sidebar">
@@ -155,14 +153,14 @@ export const Profiles = () => {
           </div>
 
           {/* Profiles Content Area */}
-          <div>
+          <div className="profiles-content-area">
             {filteredProfiles.length === 0 ? (
-              <div className="card" style={{ padding: '4rem 2rem', textAlign: 'center', background: '#FFF' }}>
+              <div className="card no-matches-card">
                 <Search size={48} color="var(--color-gold)" style={{ margin: '0 auto 1rem auto' }} />
-                <h3 style={{ fontSize: '1.4rem', color: 'var(--color-primary-dark)', marginBottom: '0.5rem' }}>
+                <h3 className="no-matches-title">
                   No Matching Profiles Found
                 </h3>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', maxWidth: '420px', margin: '0 auto 1.5rem auto' }}>
+                <p className="no-matches-text">
                   Try broadening your search criteria or resetting filters to view more profiles.
                 </p>
                 <button onClick={resetFilters} className="btn btn-primary">
@@ -171,17 +169,12 @@ export const Profiles = () => {
               </div>
             ) : (
               <div>
-                <div style={{ marginBottom: '1rem', fontSize: '0.9rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div className="profiles-count-bar">
                   <span>Showing <strong>{filteredProfiles.length}</strong> verified profiles</span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--color-gold-hover)', fontWeight: 600 }}>Demo Matches</span>
+                  <span className="demo-matches-tag">Demo Matches</span>
                 </div>
 
-                <div style={{
-                  display: viewMode === 'grid' ? 'grid' : 'flex',
-                  flexDirection: viewMode === 'list' ? 'column' : 'none',
-                  gridTemplateColumns: viewMode === 'grid' ? 'repeat(auto-fill, minmax(270px, 1fr))' : 'none',
-                  gap: '1.5rem'
-                }}>
+                <div className={`profiles-grid-wrapper ${viewMode === 'list' ? 'list-view' : 'grid-view'}`}>
                   {filteredProfiles.map(p => (
                     <ProfileCard
                       key={p.id}

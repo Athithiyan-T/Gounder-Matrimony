@@ -2293,6 +2293,295 @@ button, input, select, textarea {
   }
 }
 
+/* ==========================================================================
+   MOBILE RESPONSIVE DESIGN FOR SEARCH MATCHING PROFILES SECTION
+   ========================================================================== */
+
+/* Profiles Page Wrapper & Layout */
+.profiles-page-wrapper {
+  background-color: var(--color-bg-alt);
+  padding: 2.5rem 0 4rem 0;
+  min-height: 90vh;
+}
+
+.profiles-header-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1.25rem;
+}
+
+.profiles-page-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--color-primary-dark);
+  margin: 0;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+.profiles-page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.925rem;
+  margin-top: 0.35rem;
+}
+
+.profiles-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mobile-filter-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #7A1C29 0%, #5E141F 100%);
+  color: #FFFFFF !important;
+  border: 1px solid #D4AF37 !important;
+  padding: 0.5rem 0.95rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 14px rgba(122, 28, 41, 0.22);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-filter-btn:hover,
+.mobile-filter-btn:active {
+  background: linear-gradient(135deg, #5E141F 0%, #4A0E17 100%);
+  transform: translateY(-1px);
+}
+
+.view-mode-toggle-group {
+  background: #FFFFFF;
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #E2D9CF;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.profiles-layout-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.desktop-filter-sidebar {
+  display: block;
+  position: sticky;
+  top: 90px;
+}
+
+.profiles-content-area {
+  min-width: 0;
+}
+
+.profiles-count-bar {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #EFE4DC;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.demo-matches-tag {
+  font-size: 0.775rem;
+  color: var(--color-gold-hover);
+  font-weight: 700;
+  background: #FFFBF0;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.profiles-grid-wrapper.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.profiles-grid-wrapper.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.no-matches-card {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #EFE4DC;
+}
+
+.no-matches-title {
+  font-size: 1.35rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.no-matches-text {
+  color: var(--text-muted);
+  margin: 0 auto 1.5rem auto;
+  max-width: 420px;
+  font-size: 0.925rem;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES FOR HERO SEARCH & PROFILES MATCHING
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .profiles-page-wrapper {
+    padding: 1.75rem 0 3rem 0;
+  }
+
+  .profiles-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .desktop-filter-sidebar {
+    display: none !important;
+  }
+
+  .mobile-filter-btn {
+    display: inline-flex !important;
+  }
+
+  .profiles-header-flex {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-search-card {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-search-card {
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(122, 28, 41, 0.16);
+  }
+
+  .hero-search-tabs {
+    border-bottom: 1px solid #EFE4DC;
+  }
+
+  .search-tab-btn {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.825rem;
+  }
+
+  .hero-search-form {
+    padding: 1.15rem 1rem;
+  }
+
+  .form-field-group {
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-form-label {
+    font-size: 0.775rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .gender-pill-btn {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.825rem;
+    height: 42px;
+  }
+
+  .gender-icon {
+    font-size: 0.95rem;
+  }
+
+  .hero-select-control {
+    height: 44px;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .age-select-row {
+    gap: 0.4rem;
+  }
+
+  .age-to-text {
+    font-size: 0.75rem;
+  }
+
+  .hero-submit-btn {
+    height: 46px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .profiles-page-title {
+    font-size: 1.5rem;
+  }
+
+  .profiles-page-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .profiles-grid-wrapper.grid-view {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .profiles-count-bar {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.825rem;
+  }
+
+  .demo-matches-tag {
+    font-size: 0.725rem;
+    padding: 0.15rem 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-search-tabs {
+    flex-direction: row;
+  }
+
+  .search-tab-btn {
+    font-size: 0.78rem;
+    padding: 0.65rem 0.25rem;
+  }
+
+  .gender-pill-btn {
+    font-size: 0.78rem;
+    gap: 0.3rem;
+    padding: 0.45rem 0.25rem;
+  }
+
+  .profiles-header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mobile-filter-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+
 
 
 
